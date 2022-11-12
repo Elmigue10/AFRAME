@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-environment-component@1.3.0/dist/aframe-environment-component.min.js"></script>
+    <script src="aframe-physics-system.min.js"></script>
+    <script src="app.js"></script>
+    <title>AFRAME OCULUS GAME</title>
+</head>
+<body>
+    <a-scene physics="gravity: -3">
+        <a-entity environment="preset: japan"></a-entity>
+
+        <a-entity>
+            <a-text id="banner-text" position="-2 10 -4" color="black" font="https://cdn.aframe.io/fonts/mozillavr.fnt"></a-text>
+            <a-box target class="target" static-body="shape: box" position="-6.5 1 -6" depth="0.5" height="1" width="1"
+                    animation="property: position; from: -6.5 9 -6; to: 6.5 1 -6; dur: 4000; easing: linear; loop: true; dir:alternate"></a-box>
+
+            <a-box target class="target" static-body="shape: box" position="-6.5 1 -6" depth="0.5" height="1" width="1"
+            animation="property: position; from: -6.5 1 -6; to: 6.5 9 -6; dur: 4000; easing: linear; loop: true; dir:alternate"></a-box>
+            
+            <a-box target class="target" static-body="shape: box" position="-6.5 1 -6" depth="0.5" height="1" width="1"
+                    animation="property: position; from: -6.5 9 -6; to: -6.5 1 -6; dur: 4000; easing: linear; loop: true; dir:alternate"></a-box>
+
+            <a-box target class="target" static-body="shape: box" position="-6.5 1 -6" depth="0.5" height="1" width="1"
+            animation="property: position; from: 6.5 1 -6; to: 6.5 9 -6; dur: 4000; easing: linear; loop: true; dir:alternate"></a-box>
+
+            <a-box target class="target" static-body="shape: box" position="-6.5 1 -6" depth="0.5" height="1" width="1"
+            animation="property: position; from: -6.5 9 -6; to: 6.5 9 -6; dur: 4000; easing: linear; loop: true; dir:alternate"></a-box>
+
+            <a-box target class="target" static-body="shape: box" position="-6.5 1 -6" depth="0.5" height="1" width="1"
+            animation="property: position; from: 6.5 1 -6; to: -6.5 1 -6; dur: 4000; easing: linear; loop: true; dir:alternate"></a-box>
+        </a-entity>
+ 
+        <a-entity>
+            <a-entity id="camera" camera look-controls position="0 5 4" wasd-controls="wsAxis:y; wsInverted:true">
+              <a-text value="COUNT: 0" width="7" position="-6.5 2.8 -4" color="black" font="https://cdn.aframe.io/fonts/mozillavr.fnt"></a-text>
+              <a-cursor intersection-spawn="Event: click; mixin: voxel"></a-cursor>
+            </a-entity>
+            <a-entity oculus-touch-controls="hand: left" trigger-check></a-entity>
+            <a-entity id="rtcontroller" oculus-touch-controls="hand: right" trigger-check raycaster="showLine: true"></a-entity>
+        </a-entity>
+    </a-scene>
+</body>
+<script src="shoot.js"></script>
+
+</html>
