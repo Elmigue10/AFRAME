@@ -4,6 +4,7 @@ AFRAME.registerComponent('target', {
   init: function(){
     this.el.setAttribute("color", getRandomColor());
     let bannerText = document.getElementById("banner-text");
+    let infoText = document.getElementById("info-text");
     bannerText.setAttribute("value", "WELCOME!");
     bannerText.setAttribute("width", "20");
     setTimeout(() => {
@@ -15,6 +16,7 @@ AFRAME.registerComponent('target', {
     setTimeout(() => {
       bannerText.setAttribute("value", "¡PLAY!");
       bannerText.setAttribute("position","-1 10 -4");
+      infoText.setAttribute("Value", "Press 'space bar' to shoot.")
     }, 4000); 
   }
 });

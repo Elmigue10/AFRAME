@@ -38,6 +38,7 @@
         <a-entity>
             <a-entity id="camera" camera look-controls position="0 5 4" wasd-controls="wsAxis:y; wsInverted:true">
               <a-text value="COUNT: 0" width="7" position="-6.5 2.8 -4" color="black" font="https://cdn.aframe.io/fonts/mozillavr.fnt"></a-text>
+              <a-text id="info-text" width="7" position="-6.5 -2.8 -4" color="black" font="https://cdn.aframe.io/fonts/mozillavr.fnt"></a-text>
               <a-cursor intersection-spawn="Event: click; mixin: voxel"></a-cursor>
             </a-entity>
             <a-entity oculus-touch-controls="hand: left" trigger-check></a-entity>
