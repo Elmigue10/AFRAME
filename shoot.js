@@ -32,6 +32,7 @@ const controllershoot = () => {
   controllerEl.object3D.getWorldPosition(position);
   
   bullet.setAttribute("position", position);
+  bullet.setAttribute("color", getRandomColor());
 
   var direction = new THREE.Vector3();
   controllerEl.object3D.getWorldDirection( direction );
